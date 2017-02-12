@@ -4,6 +4,7 @@ app.controller("ContactCon", ContractCon);
 
 function ContractCon(ContactDataService) {
     var self = this;
+    this.editMode = false;
 
     ContactDataService.getContacts()
         .then(function (data) {
@@ -13,4 +14,15 @@ function ContractCon(ContactDataService) {
     this.selectContact = function (index) {
         this.selectedContacts = self.contacts[index];
     };
+
+    this.toggleEditMode = function () {
+        this.editMode = ! this.editMode;
+    }
+
+    this.saveUser = function () {
+        this.toggleEditMode();
+        var userData = this.selectedContacts;
+
+        ContactDataService.saveUser(userData);
+    }
 }

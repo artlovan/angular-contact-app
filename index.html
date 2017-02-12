@@ -2,8 +2,10 @@
 <html lang="en" ng-app="ContactApp">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="angular.js"></script>
     <script src="app.js"></script>
     <script src="controllers/contact.controller.js"></script>
@@ -14,12 +16,14 @@
     <title>Clock-App</title>
 </head>
 <body>
-    <!--<div ng-controller="HeadCon as head">-->
-        <!--<h1>{{head.title}}</h1>-->
-    <!--</div>-->
+<!--<div ng-controller="HeadCon as head">-->
+<!--<h1>{{head.title}}</h1>-->
+<!--</div>-->
 
-    <div class="container" ng-controller="ContactCon as con">
-        <div class="raw">
+<div class="container" ng-controller="ContactCon as con">
+    <div class="raw">
+
+        <div class="col-md-6">
             <div ng-repeat="contact in con.contacts">
                 <ul class="list-group">
                     <li class="list-group-item" ng-click="con.selectContact($index)">
@@ -36,30 +40,54 @@
                     </a>
                 </div>
                 <div class="media-body">
-                    <h3>{{ con.selectedContacts.name.first + " " + con.selectedContacts.name.last }}</h3>
+                    <h4>Name: {{ con.selectedContacts.name.first + " " + con.selectedContacts.name.last }}</h4>
+                    <button ng-hide="con.editMode" ng-click="con.toggleEditMode()">Edit</button>
+                    <button ng-show="con.editMode" ng-click="con.saveUser()">Save</button>
                     <div>
                         <p>
-                            <h6>Location</h6>
+                            <p6>Location</p6>
                         </p>
                         <p>
-                            {{con.selectedContacts.location.street + " " + con.selectedContacts.location.city + " " + con.selectedContacts.location.state}}
+                        <h6>Street:
+                            <span ng-hide="con.editMode">
+                                {{con.selectedContacts.location.street}}
+                            </span>
+                            <input type="text" ng-show="con.editMode" ng-model="con.selectedContacts.location.street">
+                        </h6>
+
+                        <h6>City:
+                            <span ng-hide="con.editMode">
+                                {{con.selectedContacts.location.city}}
+                            </span>
+                            <input type="text" ng-show="con.editMode" ng-model="con.selectedContacts.location.city">
+                        </h6>
+
+                        <h6>State:
+                            <span ng-hide="con.editMode">
+                                {{con.selectedContacts.location.state}}
+                            </span>
+                            <input type="text" ng-show="con.editMode" ng-model="con.selectedContacts.location.state">
+                        </h6>
                         </p>
                     </div>
                     <div>
                         <p>
-                        <h6>Phone</h6>
-                        </p>
-                        <p>
-                            {{con.selectedContacts.phone}}
+                        <h6>Phone:
+                            <span ng-hide="con.editMode">
+                                {{con.selectedContacts.phone}}
+                            </span>
+                            <input type="text" ng-show="con.editMode" ng-model="con.selectedContacts.phone">
+                        </h6>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!--<div ng-controller="FootCon as head">-->
-        <!--<h1>{{head.title}}</h1>-->
-    <!--</div>-->
+<!--<div ng-controller="FootCon as head">-->
+<!--<h1>{{head.title}}</h1>-->
+<!--</div>-->
 </body>
 </html>

@@ -11,6 +11,13 @@
                 });
         }
 
+        self.saveUser = function (userData) {
+            return $http.put("http://localhost:3000/contacts/" + userData.id, userData)
+                .then(function (response) {
+                    console.log(response)
+                })
+        }
+
     });
 
 })();

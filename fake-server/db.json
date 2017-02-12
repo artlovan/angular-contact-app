@@ -43,9 +43,9 @@
       "gender": "female",
       "location": {
         "postcode": 12350,
-        "city": "nurmes",
+        "city": "Nurmes",
         "street": "2982 rautatienkatu",
-        "state": "päijät-häme"
+        "state": "Päijät-häme"
       },
       "dob": "1960-12-10 07:03:12",
       "email": "alisa.leppo@example.com",
@@ -66,7 +66,7 @@
       },
       "nat": "FI",
       "registered": "2013-10-28 12:06:15",
-      "phone": "07-797-749"
+      "phone": "(07)-7977-49"
     },
     {
       "cell": "(696)-804-4637",
