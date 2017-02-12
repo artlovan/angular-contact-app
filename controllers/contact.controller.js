@@ -14,6 +14,7 @@ function ContractCon(ContactDataService) {
     this.selectContact = function (index) {
         this.selectedContacts = self.contacts[index];
         self.successMessage = undefined;
+        self.errorMessage = undefined;
     };
 
     this.toggleEditMode = function () {
@@ -27,6 +28,9 @@ function ContractCon(ContactDataService) {
         ContactDataService.saveUser(userData)
             .then(function () {
                 self.successMessage = "User Successfully Updated";
+            },
+            function () {
+                self.errorMessage = "There is an error. Please try again."
             });
     };
 }
