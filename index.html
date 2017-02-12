@@ -10,9 +10,6 @@
     <script src="app.js"></script>
     <script src="controllers/contact.controller.js"></script>
     <script src="services/name.service.js"></script>
-    <!--<script src="constractors/appConfig.constractor.js"></script>-->
-    <!--<script src="loggers/logger.js"></script>-->
-    <!--<script src="services/dataFactory.service.js"></script>-->
     <title>Clock-App</title>
 </head>
 <body>
@@ -24,6 +21,7 @@
     <div class="raw">
 
         <div class="col-md-6">
+            <p></p>
             <div ng-repeat="contact in con.contacts">
                 <ul class="list-group">
                     <li class="list-group-item" ng-click="con.selectContact($index)">
@@ -31,7 +29,11 @@
                     </li>
                 </ul>
             </div>
+
+            <p></p>
+            <button ng-hide="con.editMode" ng-click="con.addUser()">Create Contact</button>
         </div>
+
         <div class="raw">
 
             <div class="media">
@@ -39,18 +41,30 @@
                 <div class="alert alert-danger" ng-if="con.errorMessage">{{con.errorMessage}}</div>
 
                 <div class="media-left">
+                    <p></p>
                     <a href="#">
                         <img ng-src="{{con.selectedContacts.picture.medium}}">
                     </a>
+                    <p></p>
+                    <p>
+                        <button ng-hide="con.editMode" ng-click="con.toggleEditMode()">Edit</button>
+                        <button ng-show="con.editMode" ng-click="con.saveUser()">Save</button>
+                    </p>
                 </div>
                 <div class="media-body">
-                    <h4>Name: {{ con.selectedContacts.name.first + " " + con.selectedContacts.name.last }}</h4>
-                    <button ng-hide="con.editMode" ng-click="con.toggleEditMode()">Edit</button>
-                    <button ng-show="con.editMode" ng-click="con.saveUser()">Save</button>
+
+                    <h4>First Name:
+                        <span ng-hide="con.editMode">{{ con.selectedContacts.name.first }}</span>
+                        <input type="text" ng-show="con.editMode" ng-model="con.selectedContacts.name.first">
+                    </h4>
+
+                    <h4>Last Name:
+                        <span ng-hide="con.editMode">{{ con.selectedContacts.name.last }}</span>
+                        <input type="text" ng-show="con.editMode" ng-model="con.selectedContacts.name.last">
+                    </h4>
+
                     <div>
-                        <p>
-                            <p6>Location</p6>
-                        </p>
+                        <h5>Location</h5>
                         <p>
                         <h6>Street:
                             <span ng-hide="con.editMode">
