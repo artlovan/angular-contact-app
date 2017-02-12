@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ContactApp">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers/contact.controller.js"></script>
+    <script src="services/name.service.js"></script>
+    <!--<script src="constractors/appConfig.constractor.js"></script>-->
+    <!--<script src="loggers/logger.js"></script>-->
+    <!--<script src="services/dataFactory.service.js"></script>-->
+    <title>Clock-App</title>
+</head>
+<body>
+    <!--<div ng-controller="HeadCon as head">-->
+        <!--<h1>{{head.title}}</h1>-->
+    <!--</div>-->
+
+    <div class="container" ng-controller="ContactCon as con">
+        <div class="raw">
+            <div ng-repeat="contact in con.contacts">
+                <ul class="list-group">
+                    <li class="list-group-item" ng-click="con.selectContact($index)">
+                        <span> {{ contact.name.first + " " + contact.name.last }} </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="raw">
+            <div class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <img ng-src="{{con.selectedContacts.picture.medium}}">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h3>{{ con.selectedContacts.name.first + " " + con.selectedContacts.name.last }}</h3>
+                    <div>
+                        <p>
+                            <h6>Location</h6>
+                        </p>
+                        <p>
+                            {{con.selectedContacts.location.street + " " + con.selectedContacts.location.city + " " + con.selectedContacts.location.state}}
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                        <h6>Phone</h6>
+                        </p>
+                        <p>
+                            {{con.selectedContacts.phone}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div ng-controller="FootCon as head">-->
+        <!--<h1>{{head.title}}</h1>-->
+    <!--</div>-->
+</body>
+</html>
