@@ -44,7 +44,7 @@
       "location": {
         "postcode": 12350,
         "city": "Nurmes",
-        "street": "2982 rautatienkatu",
+        "street": "9982 rautatienkatu",
         "state": "Päijät-häme"
       },
       "dob": "1960-12-10 07:03:12",
@@ -76,10 +76,10 @@
         "large": "https://randomuser.me/api/portraits/men/9.jpg"
       },
       "location": {
-        "state": "flevoland",
+        "state": "Flevoland",
         "street": "3509 monseigneur van de weteringstraat",
         "postcode": 59696,
-        "city": "bunschoten"
+        "city": "Bunschoten"
       },
       "phone": "(124)-383-3047",
       "nat": "NL",
@@ -128,9 +128,9 @@
       "id": 3,
       "location": {
         "postcode": 96315,
-        "city": "san sebastián",
+        "city": "San sebastián",
         "state": "melilla",
-        "street": "5178 avenida de salamanca"
+        "street": "9178 avenida de salamanca"
       },
       "dob": "1960-01-03 02:25:02",
       "nat": "ES",
@@ -143,7 +143,7 @@
       "email": "alyssa.philippe@example.com",
       "registered": "2004-04-01 21:08:35",
       "location": {
-        "city": "renens vd",
+        "city": "Renens vd",
         "state": "ticino",
         "postcode": 6623,
         "street": "2021 avenue goerges clémenceau"
@@ -183,7 +183,7 @@
       "nat": "NL",
       "location": {
         "postcode": 77325,
-        "city": "heumen",
+        "city": "Heumen",
         "state": "noord-brabant",
         "street": "4610 nieuwe houtenseweg"
       },
@@ -223,8 +223,8 @@
       },
       "nat": "DE",
       "location": {
-        "city": "germersheim",
-        "state": "niedersachsen",
+        "city": "Germersheim",
+        "state": "Niedersachsen",
         "postcode": 56742,
         "street": "4341 burgstraße"
       },
